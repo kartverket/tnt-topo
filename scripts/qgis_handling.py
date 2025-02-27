@@ -13,6 +13,7 @@ This script performs various operations on QGIS project files:
 For use with TNT Topo QGIS project files.
 """
 
+import glob
 import os
 import sys
 import re
