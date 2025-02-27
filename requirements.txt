@@ -1,0 +1,6 @@
+# Required packages for TNT Topo scripts
+lxml>=4.9.3  # XML processing for QGIS files
+python-dotenv>=1.0.0  # For loading environment variables from .env file
+
+# Package management
+pip>=24
