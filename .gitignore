@@ -11,3 +11,9 @@ venv.bak/
 
 # QGIS temp files
 *~
+
+# Temp folder
+temp/
+.temp/
+tmp/
+.tmp/
