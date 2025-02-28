@@ -21,23 +21,17 @@ def install_pre_commit_hook():
 # Pre-commit hook to ensure all QGIS files have passwords removed before committing
 #
 
-# Define colors for output
-RED='\\033[0;31m'
-GREEN='\\033[0;32m'
-YELLOW='\\033[0;33m'
-NC='\\033[0m' # No Color
-
 echo "Running pre-commit hook to check for passwords in QGIS files..."
 
 # Find all staged QGIS project files
 STAGED_QGIS_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\\.qgs$')
 
 if [ -z "$STAGED_QGIS_FILES" ]; then
-    echo -e "${GREEN}No QGIS files found in commit. Proceeding with commit.${NC}"
+    echo -e "No QGIS files found in commit. Proceeding with commit.${NC}"
     exit 0
 fi
 
-echo -e "${YELLOW}Found QGIS files in commit. Checking for passwords...${NC}"
+echo -e "Found QGIS files in commit. Checking for passwords...${NC}"
 
 # Flag to track if we found any passwords
 FOUND_PASSWORDS=0
@@ -46,8 +40,8 @@ FOUND_PASSWORDS=0
 for FILE in $STAGED_QGIS_FILES; do
     if [ -f "$FILE" ]; then
         # Check if file contains passwords
-        if grep -q "password='[^']*'" "$FILE"; then
-            echo -e "${RED}ERROR: File $FILE contains passwords!${NC}"
+        if grep -E -q "password='[^']+'" "$FILE"; then
+            echo -e "ERROR: File $FILE contains passwords!${NC}"
             FOUND_PASSWORDS=1
         fi
     fi
@@ -55,17 +49,17 @@ done
 
 # If we found passwords, clean the files and abort the commit
 if [ $FOUND_PASSWORDS -eq 1 ]; then
-    echo -e "${RED}Found passwords in QGIS files. Please clean them before committing.${NC}"
-    echo -e "${YELLOW}Running the password cleaning script...${NC}"
+    echo -e "Found passwords in QGIS files. Please clean them before committing.${NC}"
+    echo -e "Running the password cleaning script...${NC}"
     
     # Run the cleaning script
     python3 scripts/clean_qgis_for_git.py -d . -v
     
-    echo -e "${RED}Commit aborted. Please stage the cleaned files and commit again.${NC}"
+    echo -e "Commit aborted. Please stage the cleaned files and commit again.${NC}"
     exit 1
 fi
 
-echo -e "${GREEN}No passwords found in QGIS files. Proceeding with commit.${NC}"
+echo -e "No passwords found in QGIS files. Proceeding with commit.${NC}"
 exit 0
 """
 
