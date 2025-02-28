@@ -50,7 +50,14 @@ Passwords and sensitive data are managed through environment variables. Use the 
 python3 scripts/qgis_handling.py --reinsert-passwords -v
 ```
 
-### Downloading Data
+## Resources
+
+- [QGIS Documentation](https://docs.qgis.org/)
+- [Style Sharing Platform](https://plugins.qgis.org/styles/)
+- [QGIS Training Materials](https://qgis.org/en/site/forusers/trainingmaterial/index.html)
+
+
+### Downloading Data for natural earth (Optional and for development/testing only)
 Download specific Natural Earth datasets and convert them to FlatGeobuf format:
 
 ```bash
@@ -80,4 +87,3 @@ For contributing to this repository:
 1. Ensure your QGIS project files are cleaned of credentials before committing
 2. Install the Git hooks to automatically prevent committing files with credentials
 3. Use environment variables for storing sensitive data
-4. Follow the code conventions from CLAUDE.md
