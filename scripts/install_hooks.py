@@ -59,7 +59,7 @@ if [ $FOUND_PASSWORDS -eq 1 ]; then
     echo -e "${YELLOW}Running the password cleaning script...${NC}"
     
     # Run the cleaning script
-    python scripts/clean_qgis_for_git.py -d . -v
+    python3 scripts/clean_qgis_for_git.py -d . -v
     
     echo -e "${RED}Commit aborted. Please stage the cleaned files and commit again.${NC}"
     exit 1
