@@ -1,0 +1,89 @@
+# TNT Topo - QGIS Project Files
+
+## Overview
+This repository contains QGIS project files for the TNT team's new Topographic map service. The project files define map layers, styling, and data sources for cartographic production.
+
+## Main Project Files
+The main project files. These files contain the full set of layers and styling for the topographic map service:
+- **data/Topo_2025.qgs** - Primary topographic map project file
+- **data/TopoGraatone_2025.qgs** - Grayscale topographic map project file
+
+## Test Project Files
+These files are used for testing and development purposes and might be removed in the future:
+- **data/enkel.qgs** - Simplified version with a reduced set of layers from the main project
+- **data/earth.qgs** - Test file containing selected Natural Earth dataset layers
+
+## Scripts
+The `/scripts` directory contains utilities for managing QGIS project files:
+
+- **clean_qgis_for_git.py** - Removes sensitive credentials from QGIS project files before committing to Git
+- **qgis_handling.py** - Handles QGIS project operations including:
+  - Reinserting passwords from environment variables
+  - Extracting datasources
+  - Replacing datasource connections
+  - URL encoding for special characters
+  - Extracting layers by datasource pattern
+- **install_hooks.py** - Installs Git hooks for password protection
+- **download_data.py** - Downloads geospatial data for the QGIS projects
+
+## Usage
+
+### Installing Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Installing Git Hooks
+```bash
+python3 scripts/install_hooks.py
+```
+
+### Cleaning Credentials
+```bash
+python3 scripts/clean_qgis_for_git.py -d ./data -v
+```
+
+### Working with Credentials
+Passwords and sensitive data are managed through environment variables. Use the QGIS handling script to restore credentials when needed:
+
+```bash
+python3 scripts/qgis_handling.py --reinsert-passwords -v
+```
+
+## Resources
+
+- [QGIS Documentation](https://docs.qgis.org/)
+- [Style Sharing Platform](https://plugins.qgis.org/styles/)
+- [QGIS Training Materials](https://qgis.org/en/site/forusers/trainingmaterial/index.html)
+
+
+### Downloading Data for natural earth (Optional and for development/testing only)
+Download specific Natural Earth datasets and convert them to FlatGeobuf format:
+
+```bash
+# Download all datasets (countries, lakes, boundaries)
+python3 scripts/download_data.py -v
+
+# Download specific datasets
+python3 scripts/download_data.py -s countries lakes -v
+
+# Force redownload and conversion
+python3 scripts/download_data.py --force -v
+```
+
+Note: The `download_data.py` script requires GDAL/OGR tools to be installed for the FlatGeobuf conversion.
+
+## Development
+
+### Git Hooks
+A pre-commit hook is included to automatically check for credentials in QGIS files. To install it:
+
+```bash
+python3 scripts/install_hooks.py
+```
+
+### Contributing
+For contributing to this repository:
+1. Ensure your QGIS project files are cleaned of credentials before committing
+2. Install the Git hooks to automatically prevent committing files with credentials
+3. Use environment variables for storing sensitive data
