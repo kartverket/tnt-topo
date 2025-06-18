@@ -4,9 +4,7 @@
 This repository contains QGIS project files for the TNT team's new Topographic map service. The project files define map layers, styling, and data sources for cartographic production.
 
 ## Main Project Files
-The main project files. These files contain the full set of layers and styling for the topographic map service:
-- **data/Topo_2025.qgs** - Primary topographic map project file
-- **data/TopoGraatone_2025.qgs** - Grayscale topographic map project file
+The main project files are moved to an houseintern s3 solution for now.le
 
 ## Test Project Files
 These files are used for testing and development purposes and might be removed in the future:
