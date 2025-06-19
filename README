@@ -4,7 +4,7 @@
 This repository contains QGIS project files for the TNT team's new Topographic map service. The project files define map layers, styling, and data sources for cartographic production.
 
 ## Main Project Files
-The main project files are moved to an houseintern s3 solution for now.le
+The main project files are moved for now.
 
 ## Test Project Files
 These files are used for testing and development purposes and might be removed in the future:
