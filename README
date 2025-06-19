@@ -11,50 +11,14 @@ These files are used for testing and development purposes and might be removed i
 - **data/enkel.qgs** - Simplified version with a reduced set of layers from the main project
 - **data/earth.qgs** - Test file containing selected Natural Earth dataset layers
 
-## Scripts
-The `/scripts` directory contains utilities for managing QGIS project files:
-
-- **clean_qgis_for_git.py** - Removes sensitive credentials from QGIS project files before committing to Git
-- **qgis_handling.py** - Handles QGIS project operations including:
-  - Reinserting passwords from environment variables
-  - Extracting datasources
-  - Replacing datasource connections
-  - URL encoding for special characters
-  - Extracting layers by datasource pattern
-- **install_hooks.py** - Installs Git hooks for password protection
-- **download_data.py** - Downloads geospatial data for the QGIS projects
-
-## Usage
-
-### Installing Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-3. **Set up Git hooks** (recommended):
-   ```bash
-   python3 scripts/install_hooks.py
-   ```
-
-4. **Open a project in QGIS**:
-   - Launch QGIS
-   - Open `data/Topo_2025.qgs`
-   - Wait for initial layer loading (2000+ layers)
-
-### 🔧 Environment Setup
-For database connections, set up environment variables:
-```bash
-export QGIS_DB_PASSWORD="your_database_password"
-export QGIS_DB_USER="your_username"
-```
 
 ## 📚 Documentation
 
 ### 🗂️ Layer Documentation
 Comprehensive documentation with all layer specifications is available:
-- **[📖 Full Layer Documentation](docs/Topo_2025.md)** - Complete technical specifications
-- **[🎯 Quick Reference Guide](#)** - Essential layer information
-- **[🗺️ Coverage Maps](#)** - Geographic extent and scale information
+- **[📖 Full Layer Documentation](https://github.com/kartverket/tnt-topo/wiki/Topo-2025-Project-Layers-Layer-Documentation)** - Complete technical specifications
+- **[🎨 Legend](https://github.com/kartverket/tnt-topo/wiki/Legend)** - Visual representation of layer symbology
+
 
 ### 🛠️ Automation Tools
 
@@ -84,6 +48,28 @@ python3 scripts/document_qgis_layers.py ./data/Topo_2025.qgs \
 ```
 
 ## 🛠️ Utility Scripts
+
+### Installing Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+3. **Set up Git hooks** (recommended):
+   ```bash
+   python3 scripts/install_hooks.py
+   ```
+
+4. **Open a project in QGIS**:
+   - Launch QGIS
+   - Open `data/Topo_2025.qgs`
+   - Wait for initial layer loading (2000+ layers)
+
+### 🔧 Environment Setup
+For database connections, set up environment variables:
+```bash
+export QGIS_DB_PASSWORD="your_database_password"
+export QGIS_DB_USER="your_username"
+```
 
 The `/scripts` directory provides powerful automation tools:
 
