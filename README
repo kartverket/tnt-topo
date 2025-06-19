@@ -1,44 +1,35 @@
-# 🗺️ TNT Topo - Norwegian Topographic Map Services
+# TNT Topo - QGIS Project Files
 
-![QGIS](https://img.shields.io/badge/QGIS-3.16+-green?logo=qgis)
-![License](https://img.shields.io/badge/License-Norwegian%20Mapping%20Authority-orange)
-![Layers](https://img.shields.io/badge/Layers-2016+-blue)
-![Python](https://img.shields.io/badge/Python-3.7+-blue?logo=python)
+## Overview
+This repository contains QGIS project files for the TNT team's new Topographic map service. The project files define map layers, styling, and data sources for cartographic production.
 
-> **Comprehensive QGIS project files for Norwegian topographic mapping services, including mainland Norway, Jan Mayen, and Svalbard territories.**
+## Main Project Files
+The main project files are moved to an houseintern s3 solution for now.le
 
-## 📋 Overview
+## Test Project Files
+These files are used for testing and development purposes and might be removed in the future:
+- **data/enkel.qgs** - Simplified version with a reduced set of layers from the main project
+- **data/earth.qgs** - Test file containing selected Natural Earth dataset layers
 
-This repository contains handling and setup for QGIS project files. 
+## Scripts
+The `/scripts` directory contains utilities for managing QGIS project files:
 
+- **clean_qgis_for_git.py** - Removes sensitive credentials from QGIS project files before committing to Git
+- **qgis_handling.py** - Handles QGIS project operations including:
+  - Reinserting passwords from environment variables
+  - Extracting datasources
+  - Replacing datasource connections
+  - URL encoding for special characters
+  - Extracting layers by datasource pattern
+- **install_hooks.py** - Installs Git hooks for password protection
+- **download_data.py** - Downloads geospatial data for the QGIS projects
 
-### 🧪 Development & Testing
-Development files for testing and experimentation:
+## Usage
 
-| File | Description | Purpose |
-|------|-------------|---------|
-| **`data/enkel.qgs`** | 📋 Simplified layer subset | Testing, development |
-| **`data/earth.qgs`** | 🌍 Natural Earth datasets | International context |
-
-## 🚀 Quick Start
-
-### Prerequisites
-- **QGIS 3.16+** (LTR recommended) - [Download QGIS](https://qgis.org/download/)
-- **Python 3.7+** for automation scripts
-- **Network connection** for live data services
-- **Git** for version control
-
-### Getting Started
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-org/tnt-topo.git
-   cd tnt-topo
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Installing Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 3. **Set up Git hooks** (recommended):
    ```bash
@@ -164,40 +155,8 @@ python3 scripts/download_data.py --force -v
 5. **Clean before commit**: Pre-commit hook automatically runs
 6. **Commit and push**: `git add . && git commit -m "Description" && git push`
 
-### 🛡️ Security Best Practices
-- **Never commit credentials** - Use environment variables
-- **Install Git hooks** - Automatic credential checking
-- **Use secure connections** - HTTPS/SSL for data sources
-- **Review changes** - Check diffs before committing
-
-### 🧪 Testing
-- **Use test projects** - `enkel.qgs` and `earth.qgs` for experiments
-- **Validate data sources** - Check all connections work
-- **Test scale ranges** - Verify layer visibility at different scales
-- **Performance testing** - Monitor rendering speed with large datasets
-
-### 🔗 Data Sources
-- **🏛️ Norwegian Mapping Authority (Kartverket)** - Primary data provider
-- **🌍 Natural Earth** - International context (development only)
-
-## 📚 Resources & Links
-
-### 📖 Documentation
-- **[🗺️ Full Layer Documentation](docs/Topo_2025.md)** - Complete technical specifications
-- **[QGIS Documentation](https://docs.qgis.org/)** - Official QGIS user guides
-- **[Norwegian Mapping Authority](https://kartverket.no/)** - Data provider information
-
-### 🎨 Cartographic Resources  
-- **[Cartographic Guidelines](https://kartverket.no/en/geodata)** - Norwegian mapping standards
-
-### 🔧 Development Tools
-- **[QGIS Server](https://docs.qgis.org/3.28/en/docs/server_manual/)** - Web map services
-- **[PyQGIS Documentation](https://qgis.org/pyqgis/)** - Python automation
-- **[GDAL/OGR](https://gdal.org/)** - Geospatial data processing
-
----
-
-**📍 Repository**: [github.com/your-org/tnt-topo](https://github.com/your-org/tnt-topo)  
-**📧 Contact**: TNT Topographic Team  
-**📅 Last Updated**: June 2025  
-**🏷️ Version**: 2025.1
+### Contributing
+For contributing to this repository:
+1. Ensure your QGIS project files are cleaned of credentials before committing
+2. Install the Git hooks to automatically prevent committing files with credentials
+3. Use environment variables for storing sensitive data
