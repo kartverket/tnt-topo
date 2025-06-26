@@ -1,0 +1,148 @@
+# TNT Topo - QGIS Project Files
+
+## Overview
+This repository contains QGIS project files for the TNT team's new Topographic map service. The project files define map layers, styling, and data sources for cartographic production.
+
+## Main Project Files
+The main project files are moved for now.
+
+## Test Project Files
+These files are used for testing and development purposes and might be removed in the future:
+- **data/enkel.qgs** - Simplified version with a reduced set of layers from the main project
+- **data/earth.qgs** - Test file containing selected Natural Earth dataset layers
+
+
+## 📚 Documentation
+
+### 🗂️ Layer Documentation
+Comprehensive documentation with all layer specifications is available:
+- [📖 Full Layer Documentation](https://github.com/kartverket/tnt-topo/wiki/Topo-2025-Project-Layers-Layer-Documentation) - Complete technical specifications
+- [🎨 Legend](https://github.com/kartverket/tnt-topo/wiki/Legend) - Visual representation of layer symbology
+
+
+### 🛠️ Automation Tools
+
+#### 📋 Layer Documentation Generator
+Generates comprehensive documentation optimized for GitHub Wiki publishing:
+
+```bash
+# 🎯 Generate complete GitHub Wiki documentation
+python3 scripts/document_qgis_layers.py ./data/Topo_2025.qgs \
+  --output wiki/Topo-Documentation.md \
+  --sidebar wiki/_Sidebar.md
+
+# 📊 Generate without legends (faster)
+python3 scripts/document_qgis_layers.py ./data/Topo_2025.qgs \
+  --no-legends --output docs/Topo-Quick-Reference.md
+
+# 🔧 Generate with custom QGIS Server configuration
+python3 scripts/document_qgis_layers.py ./data/Topo_2025.qgs \
+  --legend-base-url "https://your-qgis-server.com/qgis/" \
+  --legend-map-file "/path/to/your/project.qgs" \
+  --output wiki/Documentation.md
+
+# 📈 Generate with CSV export for analysis
+python3 scripts/document_qgis_layers.py ./data/Topo_2025.qgs \
+  --output docs/Layer-Documentation.md \
+  --csv data/layer-analysis.csv
+```
+
+## 🛠️ Utility Scripts
+
+### Installing Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+3. **Set up Git hooks** (recommended):
+   ```bash
+   python3 scripts/install_hooks.py
+   ```
+
+4. **Open a project in QGIS**:
+   - Launch QGIS
+   - Open `data/Topo_2025.qgs`
+   - Wait for initial layer loading (2000+ layers)
+
+### 🔧 Environment Setup
+For database connections, set up environment variables:
+```bash
+export QGIS_DB_PASSWORD="your_database_password"
+export QGIS_DB_USER="your_username"
+```
+
+The `/scripts` directory provides powerful automation tools:
+
+| Script | Purpose | Key Features |
+|--------|---------|--------------|
+| **`clean_qgis_for_git.py`** | 🔒 **Security** | Removes credentials before Git commits |
+| **`qgis_handling.py`** | ⚙️ **Project Management** | Password restoration, datasource operations |
+| **`install_hooks.py`** | 🔧 **Setup** | Installs Git hooks for credential protection |
+| **`download_data.py`** | 📥 **Data Management** | Downloads Natural Earth test datasets |
+| **`document_qgis_layers.py`** | 📚 **Documentation** | Generates comprehensive layer documentation |
+
+### 🔒 Security Features
+- **Automatic credential removal** before Git commits
+- **Environment variable integration** for sensitive data
+- **Pre-commit hooks** to prevent credential leaks
+- **Password restoration** from environment variables
+
+### ⚙️ Core Operations
+- **Datasource extraction and replacement**
+- **URL encoding for special characters** 
+- **Layer filtering by datasource patterns**
+- **Batch processing capabilities**
+
+## 💻 Usage Examples
+
+### 🔐 Credential Management
+#### 🔐 Clean Projects Before Committing
+```bash
+# Clean all QGIS files in data directory (recommended before commits)
+python3 scripts/clean_qgis_for_git.py -d ./data -v
+
+# Clean specific project file
+python3 scripts/clean_qgis_for_git.py -f ./data/Topo_2025.qgs -v
+```
+
+#### 🔑 Restore Credentials for Development
+```bash
+# Restore passwords from environment variables
+python3 scripts/qgis_handling.py --reinsert-passwords -v
+
+# Restore specific project
+python3 scripts/qgis_handling.py --reinsert-passwords -f ./data/Topo_2025.qgs -v
+```
+
+### 📥 Development Data Setup
+#### 🌍 Natural Earth Test Data (Optional)
+Download Natural Earth datasets for development and testing:
+
+```bash
+# 📦 Download all test datasets (countries, lakes, boundaries)
+python3 scripts/download_data.py -v
+
+# 🎯 Download specific datasets only
+python3 scripts/download_data.py -s countries lakes -v
+
+# 🔄 Force redownload and conversion to FlatGeobuf
+python3 scripts/download_data.py --force -v
+```
+
+> **⚠️ Note**: Requires GDAL/OGR tools for FlatGeobuf conversion. Install with: `conda install gdal` or `apt-get install gdal-bin`
+
+## 🏗️ Development Workflow
+
+### 🔄 Recommended Development Process
+1. **Pull latest changes**: `git pull origin main`
+2. **Clean credentials**: `python3 scripts/clean_qgis_for_git.py -d ./data -v`
+3. **Restore passwords**: `python3 scripts/qgis_handling.py --reinsert-passwords -v`
+4. **Work in QGIS**: Make your changes
+5. **Clean before commit**: Pre-commit hook automatically runs
+6. **Commit and push**: `git add . && git commit -m "Description" && git push`
+
+### Contributing
+For contributing to this repository:
+1. Ensure your QGIS project files are cleaned of credentials before committing
+2. Install the Git hooks to automatically prevent committing files with credentials
+3. Use environment variables for storing sensitive data
