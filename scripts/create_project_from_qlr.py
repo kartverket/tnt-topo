@@ -295,7 +295,12 @@ def update_crs(new_crs):
 # Example usage in QGIS Python Console:
 """
 # Load and run the script
-exec(open('/home/miecar/repos/tnt-topo/scripts/create_project_from_qlr.py').read())
+# Use a relative path or set the path variable as needed for your environment:
+# Example with relative path:
+exec(open('./scripts/create_project_from_qlr.py').read())
+# Or set the path dynamically:
+# script_path = os.path.join(os.getcwd(), 'scripts', 'create_project_from_qlr.py')
+# exec(open(script_path).read())
 
 # Or customize settings before running:
 update_qlr_folder('/path/to/my_custom_layers')

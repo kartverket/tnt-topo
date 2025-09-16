@@ -13,7 +13,7 @@ Disclaimer: Generated with VS Code, Chat Mode Agent, Model: Claude Sonnet 4
 - Reads all .qlr files from `./data/topo_layers/`
 - Sorts layers by number in filename (e.g., `001_layer.qlr`, `002_layer.qlr`)
 - Creates new project file at `./data/topo_from_qlr.qgs`
-- Sets Norwegian coordinate system (EPSG:5973)
+- Sets Norwegian coordinate system (EPSG:25833) by default
 - Comprehensive logging and error handling
 - Configurable paths and settings
 
