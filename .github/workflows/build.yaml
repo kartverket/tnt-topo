@@ -1,0 +1,43 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - data/**
+      - fonts/**
+      - .github/workflows/build.yaml
+      - Dockerfile
+env:
+  DOCKER_REGISTRY: ghcr.io
+  IMAGE_NAME: kartverket/tnt-topo
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: type=sha,format=long
+      - name: Login to Github Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKER_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - name: Build docker image and push
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          labels: ${{ steps.meta.outputs.labels }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}

@@ -17,3 +17,7 @@ temp/
 .temp/
 tmp/
 .tmp/
+
+# Ignore extra QGIS-files
+*_attachments.zip
+*.qgs~
