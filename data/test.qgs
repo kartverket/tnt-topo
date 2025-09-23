@@ -43,53 +43,53 @@
           <Option value="Grenser" name="wmsTitle" type="QString"/>
         </Option>
       </customproperties>
-      <layer-tree-layer legend_exp="" id="grenser_smia_815d1b0b_703d_4933_9b4f_7d063da2a2f6" expanded="1" name="grenser_smia" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_smia.fgb|layername=grenser_smia">
+      <layer-tree-layer legend_exp="" id="grenser_smia_815d1b0b_703d_4933_9b4f_7d063da2a2f6" expanded="1" name="grenser_smia" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_smia.fgb|layername=grenser_smia">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n50_6b801411_b9c6_4ae2_aca5_5de5f28c75c0" expanded="1" name="grenser_n50" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n50.fgb|layername=grenser_n50">
+      <layer-tree-layer legend_exp="" id="grenser_n50_6b801411_b9c6_4ae2_aca5_5de5f28c75c0" expanded="1" name="grenser_n50" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n50.fgb|layername=grenser_n50">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n100_01edee8e_3c1b_49d3_a537_9fec9d9f886d" expanded="1" name="grenser_n100" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n100.fgb|layername=grenser_n100">
+      <layer-tree-layer legend_exp="" id="grenser_n100_01edee8e_3c1b_49d3_a537_9fec9d9f886d" expanded="1" name="grenser_n100" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n100.fgb|layername=grenser_n100">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n250_a2c9ba89_300a_418f_85e5_bac07d7cfb0d" expanded="1" name="grenser_n250" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n250.fgb|layername=grenser_n250">
+      <layer-tree-layer legend_exp="" id="grenser_n250_a2c9ba89_300a_418f_85e5_bac07d7cfb0d" expanded="1" name="grenser_n250" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n250.fgb|layername=grenser_n250">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n500_a239d415_e25c_4834_9f03_10c86596303a" expanded="1" name="grenser_n500" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n500.fgb|layername=grenser_n500">
+      <layer-tree-layer legend_exp="" id="grenser_n500_a239d415_e25c_4834_9f03_10c86596303a" expanded="1" name="grenser_n500" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n500.fgb|layername=grenser_n500">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n1000_0aa5d17c_9b31_4b64_82c5_0e257a780ad5" expanded="1" name="grenser_n1000" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n1000.fgb|layername=grenser_n1000">
+      <layer-tree-layer legend_exp="" id="grenser_n1000_0aa5d17c_9b31_4b64_82c5_0e257a780ad5" expanded="1" name="grenser_n1000" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n1000.fgb|layername=grenser_n1000">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n2000_ff1972c9_c1ff_4d73_98d2_aef761289229" expanded="1" name="grenser_n2000" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n2000.fgb|layername=grenser_n2000">
+      <layer-tree-layer legend_exp="" id="grenser_n2000_ff1972c9_c1ff_4d73_98d2_aef761289229" expanded="1" name="grenser_n2000" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n2000.fgb|layername=grenser_n2000">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" id="grenser_n5000_01318915_77ee_4756_8c57_7a74faba171f" expanded="1" name="grenser_n5000" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n5000.fgb|layername=grenser_n5000">
+      <layer-tree-layer legend_exp="" id="grenser_n5000_01318915_77ee_4756_8c57_7a74faba171f" expanded="1" name="grenser_n5000" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/grenser_n5000.fgb|layername=grenser_n5000">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer legend_exp="" id="heliport_7ada9342_ed36_49c1_a8f0_c02b0fd119e2" expanded="1" name="heliport" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/heliport.fgb|layername=heliport">
+    <layer-tree-layer legend_exp="" id="heliport_7ada9342_ed36_49c1_a8f0_c02b0fd119e2" expanded="1" name="heliport" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/heliport.fgb|layername=heliport">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer legend_exp="" id="lufthavn_86d12228_fae9_4d18_99d7_2cacbdc9e736" expanded="1" name="lufthavn" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsicurl/https://s3-rin.statkart.no/topotest/lufthavn.fgb|layername=lufthavn">
+    <layer-tree-layer legend_exp="" id="lufthavn_86d12228_fae9_4d18_99d7_2cacbdc9e736" expanded="1" name="lufthavn" legend_split_behavior="0" patch_size="-1,-1" checked="Qt::Checked" providerKey="ogr" source="/vsigs/topo-2025_dev_2en1/sources/lufthavn.fgb|layername=lufthavn">
       <customproperties>
         <Option/>
       </customproperties>
@@ -303,7 +303,7 @@
         <ymax>71.76505254224311159</ymax>
       </wgs84extent>
       <id>grenser_n1000_0aa5d17c_9b31_4b64_82c5_0e257a780ad5</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n1000.fgb|layername=grenser_n1000</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n1000.fgb|layername=grenser_n1000</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -961,7 +961,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505254224311159</ymax>
       </wgs84extent>
       <id>grenser_n100_01edee8e_3c1b_49d3_a537_9fec9d9f886d</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n100.fgb|layername=grenser_n100</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n100.fgb|layername=grenser_n100</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1619,7 +1619,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505254224311159</ymax>
       </wgs84extent>
       <id>grenser_n2000_ff1972c9_c1ff_4d73_98d2_aef761289229</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n2000.fgb|layername=grenser_n2000</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n2000.fgb|layername=grenser_n2000</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2277,7 +2277,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505251291654019</ymax>
       </wgs84extent>
       <id>grenser_n250_a2c9ba89_300a_418f_85e5_bac07d7cfb0d</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n250.fgb|layername=grenser_n250</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n250.fgb|layername=grenser_n250</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2935,7 +2935,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505254224311159</ymax>
       </wgs84extent>
       <id>grenser_n5000_01318915_77ee_4756_8c57_7a74faba171f</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n5000.fgb|layername=grenser_n5000</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n5000.fgb|layername=grenser_n5000</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3593,7 +3593,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505254224311159</ymax>
       </wgs84extent>
       <id>grenser_n500_a239d415_e25c_4834_9f03_10c86596303a</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n500.fgb|layername=grenser_n500</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n500.fgb|layername=grenser_n500</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4251,7 +4251,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505254224311159</ymax>
       </wgs84extent>
       <id>grenser_n50_6b801411_b9c6_4ae2_aca5_5de5f28c75c0</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_n50.fgb|layername=grenser_n50</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_n50.fgb|layername=grenser_n50</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4909,7 +4909,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>71.76505254408699841</ymax>
       </wgs84extent>
       <id>grenser_smia_815d1b0b_703d_4933_9b4f_7d063da2a2f6</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/grenser_smia.fgb|layername=grenser_smia</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/grenser_smia.fgb|layername=grenser_smia</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5567,7 +5567,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>78.65511324849164509</ymax>
       </wgs84extent>
       <id>heliport_7ada9342_ed36_49c1_a8f0_c02b0fd119e2</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/heliport.fgb|layername=heliport</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/heliport.fgb|layername=heliport</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5988,7 +5988,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
         <ymax>78.9448380488447583</ymax>
       </wgs84extent>
       <id>lufthavn_86d12228_fae9_4d18_99d7_2cacbdc9e736</id>
-      <datasource>/vsicurl/https://s3-rin.statkart.no/topotest/lufthavn.fgb|layername=lufthavn</datasource>
+      <datasource>/vsigs/topo-2025_dev_2en1/sources/lufthavn.fgb|layername=lufthavn</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6651,7 +6651,7 @@ def mitt_skjema_åpne(vindu, lag, objekt):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings destinationLayerName="grenser_smia" destinationLayerSource="/vsicurl/https://s3-rin.statkart.no/topotest/grenser_smia.fgb|layername=grenser_smia" autoAddTrackVertices="0" destinationLayer="grenser_smia_815d1b0b_703d_4933_9b4f_7d063da2a2f6" destinationLayerProvider="ogr" destinationFollowsActiveLayer="1" autoCommitFeatures="0">
+  <ProjectGpsSettings destinationLayerName="grenser_smia" destinationLayerSource="/vsigs/topo-2025_dev_2en1/sources/grenser_smia.fgb|layername=grenser_smia" autoAddTrackVertices="0" destinationLayer="grenser_smia_815d1b0b_703d_4933_9b4f_7d063da2a2f6" destinationLayerProvider="ogr" destinationFollowsActiveLayer="1" autoCommitFeatures="0">
     <timeStampFields/>
   </ProjectGpsSettings>
 </qgis>
