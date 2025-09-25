@@ -6,6 +6,7 @@ on:
     paths:
       - data/**
       - fonts/**
+      - runtime/**
       - .github/workflows/build.yaml
       - Dockerfile
 env:
