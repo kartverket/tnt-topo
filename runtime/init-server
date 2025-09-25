@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+unset GOOGLE_APPLICATION_CREDENTIALS CPL_GS_CREDENTIALS_FILE CPL_GCE_SKIP
+
+cp -p /data/project.qgs $QGIS_PROJECT_FILE
+
+if [ ! -z "$BUCKET_NAME" ]; then
+    sed -i "s/topo-2025_dev_2en1/$BUCKET_NAME/g" $QGIS_PROJECT_FILE
+
+exec /usr/local/bin/start-server
