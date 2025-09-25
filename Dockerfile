@@ -12,7 +12,7 @@ RUN usermod -u 150 www-data \
 
 USER www-data:root
 
-COPY --chown=www-data:root ./runtime/init-server /usr/local/bin/init-server
+COPY --chown=www-data:root --chmod=0755 ./runtime/init-server /usr/local/bin/init-server
 
 CMD ["/usr/local/bin/init-server"]
 
