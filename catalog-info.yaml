@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tnt-topo
+spec:
+  type: Documentation
+  owner: team_norgeskart_og_topo
+  lifecycle: production
+  system: norgeskart
