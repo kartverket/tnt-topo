@@ -27,6 +27,11 @@ ENV CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif,.tiff,.TIF,.fgb,.parquet'
 RUN usermod -u 150 www-data \
     && groupmod -g 150 www-data
 
+# Ensure Apache runtime dir exists in the image 
+RUN mkdir -p /run/apache2 \
+    && chown www-data:root /run/apache2 \
+    && chmod 0775 /run/apache2
+
 USER www-data:root
 
 COPY --chown=www-data:root --chmod=0755 ./runtime/init-server /usr/local/bin/init-server
