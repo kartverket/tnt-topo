@@ -25,10 +25,10 @@ from dotenv import load_dotenv
 
 # Default list of QGIS project files
 DEFAULT_QGIS_PROJECTS = [
+    './data/test.qgs',
     './data/Topo_2025.qgs',
     './data/TopoGraatone_2025.qgs',
     './data/earth.qgs',
-    './data/enkel.qgs'
 ]
 
 def load_env_variables() -> Dict[str, str]:
