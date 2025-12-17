@@ -102,6 +102,75 @@ def extract_datasources(qgis_projects: List[str], verbose: bool = False) -> None
             print(f"Error extracting datasources from {qgis_project}: {str(e)}")
 
 
+def extract_datasources_from_qlr(qlr_directory: str = './data/QLR', verbose: bool = False) -> None:
+    """
+    Extract all datasources from QLR (QGIS Layer Definition) files and save to a consolidated file.
+
+    Args:
+        qlr_directory (str): Directory containing QLR files
+        verbose (bool): Whether to print verbose output
+    """
+    if not os.path.exists(qlr_directory):
+        print(f"Error: Directory {qlr_directory} does not exist")
+        return
+
+    # Find all QLR files in the directory
+    qlr_pattern = os.path.join(qlr_directory, '**/*.qlr')
+    qlr_files = glob.glob(qlr_pattern, recursive=True)
+
+    if not qlr_files:
+        print(f"No QLR files found in {qlr_directory}")
+        return
+
+    if verbose:
+        print(f"Found {len(qlr_files)} QLR files in {qlr_directory}")
+
+    # Collect all datasources
+    all_datasources = []
+    total_count = 0
+
+    for qlr_file in qlr_files:
+        if verbose:
+            print(f"Processing: {qlr_file}")
+
+        try:
+            tree = ET.parse(qlr_file)
+            root = tree.getroot()
+
+            # Find all datasources in the QLR file
+            datasources = root.findall('.//datasource')
+
+            for datasource in datasources:
+                if datasource.text:
+                    all_datasources.append({
+                        'file': os.path.relpath(qlr_file, qlr_directory),
+                        'datasource': datasource.text
+                    })
+                    total_count += 1
+
+            if verbose:
+                print(f"  Found {len(datasources)} datasources")
+
+        except Exception as e:
+            print(f"Error processing {qlr_file}: {str(e)}")
+
+    # Save all datasources to a consolidated file
+    output_file = os.path.join(qlr_directory, 'qlr_datasources.txt')
+
+    with open(output_file, 'w') as f:
+        f.write(f"# Datasources extracted from {len(qlr_files)} QLR files\n")
+        f.write(f"# Total datasources: {total_count}\n\n")
+
+        current_file = None
+        for entry in all_datasources:
+            if entry['file'] != current_file:
+                current_file = entry['file']
+                f.write(f"\n## File: {current_file}\n")
+            f.write(f"{entry['datasource']}\n")
+
+    print(f"Extracted {total_count} datasources from {len(qlr_files)} QLR files to {output_file}")
+
+
 def replace_datasources(qgis_projects: List[str], host_pattern: str = 'host=kv-vm-00436',
                         verbose: bool = False) -> None:
     """
@@ -453,6 +522,8 @@ def main() -> int:
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--extract-datasources", action="store_true",
                      help="Extract datasources to text files")
+    group.add_argument("--extract-datasources-qlr", action="store_true",
+                     help="Extract datasources from all QLR files")
     group.add_argument("--replace-datasources", action="store_true",
                      help="Replace datasources with URL-based datasources")
     group.add_argument("--remove-passwords", action="store_true",
@@ -471,6 +542,8 @@ def main() -> int:
                       help="Pattern to match for extract-layers")
     parser.add_argument("--output-project",
                       help="Output project file for extract-layers")
+    parser.add_argument("--qlr-directory", default="./data/QLR",
+                      help="Directory containing QLR files (default: ./data/QLR)")
 
     args = parser.parse_args()
 
@@ -503,6 +576,9 @@ def main() -> int:
     # Perform the specified operation
     if args.extract_datasources:
         extract_datasources(qgis_projects, args.verbose)
+
+    elif args.extract_datasources_qlr:
+        extract_datasources_from_qlr(args.qlr_directory, args.verbose)
 
     elif args.replace_datasources:
         replace_datasources(qgis_projects, args.host_pattern, args.verbose)
