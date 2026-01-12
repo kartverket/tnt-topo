@@ -25,6 +25,9 @@ ENV CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif,.tiff,.TIF,.fgb,.parquet'
 
 ENV PROJ_NETWORK='ON'
 
+# Install htop for system monitoring inside the container, useful for finding performance settings
+RUN apt-get update && apt-get install -y htop && rm -rf /var/lib/apt/lists/*
+
 # Set www-data UID and GID to 150 to match skiperator requirements
 RUN usermod -u 150 www-data \
     && groupmod -g 150 www-data
