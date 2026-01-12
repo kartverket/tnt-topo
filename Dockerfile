@@ -6,11 +6,14 @@ EXPOSE 8080
 
 ENV QGIS_SERVER_LOG_PROFILE='true'
 ENV QGIS_SERVER_LOG_LEVEL='0'
-ENV QGIS_PROJECT_FILE=/etc/qgisserver/project.qgs
+ENV QGIS_PROJECT_FILE=/tmp/project.qgs
+ENV QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES=/tmp
 ENV QGIS_SERVER_IGNORE_BAD_LAYERS='true'
 ENV QGIS_SERVER_PARALLEL_RENDERING='true'
 # ENV QGIS_SERVER_MAX_THREADS='4'
 ENV QGIS_SERVER_PROJECT_CACHE_CHECK_INTERVAL='0'
+ENV QGIS_SERVER_CACHE_DIRECTORY=/tmp/cache
+ENV QGIS_SERVER_FORCE_READONLY_LAYERS=true
 
 ENV FCGID_IO_TIMEOUT='3600'
 ENV FCGID_BUSY_TIMEOUT='3600'
@@ -19,11 +22,16 @@ ENV FCGID_IDLE_TIMEOUT='3600'
 # ENV FCGID_MIN_PROCESSES=1
 # ENV FCGID_MAX_PROCESSES=5
 
+ENV QT_NETWORK_CACHE_DIR='/tmp/qt-network-cache'
+
 ENV CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif,.tiff,.TIF,.fgb,.parquet'
 # ENV CPL_CURL_TIMEOUT='60'
 # ENV CPL_VSIL_CURL_USE_HEAD='NO'
 
 ENV PROJ_NETWORK='ON'
+
+# Install htop for system monitoring inside the container, useful for finding performance settings
+RUN apt-get update && apt-get install -y htop && rm -rf /var/lib/apt/lists/*
 
 # Set www-data UID and GID to 150 to match skiperator requirements
 RUN usermod -u 150 www-data \
