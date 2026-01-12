@@ -40,4 +40,4 @@ CMD ["/usr/local/bin/init-server"]
 
 COPY --chown=www-data:root ./fonts /etc/qgisserver/fonts
 
-COPY --chown=www-data:root ./data/test.qgs /data/project.qgs
+COPY --chown=www-data:root ./data/topo_2026.qgs /data/project.qgs
