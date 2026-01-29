@@ -5,7 +5,9 @@ unset GOOGLE_APPLICATION_CREDENTIALS CPL_GS_CREDENTIALS_FILE CPL_GCE_SKIP
 # Ensure Apache runtime dir exists at container startup as a fallback
 mkdir -p /run/apache2 || true
 
-cp -p /data/project.qgs $QGIS_PROJECT_FILE
+if [ "$QGIS_PROJECT_FILE" != "/data/project.qgs" ]; then
+    cp -p /data/project.qgs $QGIS_PROJECT_FILE
+fi
 
 if [ ! -z "$BUCKET_NAME" ]; then
     sed -i "s/topo-2025_dev_2en1/$BUCKET_NAME/g" $QGIS_PROJECT_FILE
