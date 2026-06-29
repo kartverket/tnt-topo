@@ -1,6 +1,6 @@
 # Required packages for TNT Topo scripts
 lxml>=6.1.1  # XML processing for QGIS files
-python-dotenv>=1.0.0  # For loading environment variables from .env file
+python-dotenv>=1.2.2  # For loading environment variables from .env file
 requests>=2.34.2  # For HTTP requests and data downloads
 tqdm>=4.68.3  # For progress bars
 # GDAL is required for ogr2ogr but typically installed system-wide
