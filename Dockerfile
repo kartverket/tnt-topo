@@ -1,4 +1,4 @@
-FROM ghcr.io/camptocamp/qgis-server:4.0
+FROM ghcr.io/camptocamp/qgis-server:4.2
 
 LABEL maintainer="kartverket.no"
 
