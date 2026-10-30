@@ -123,11 +123,23 @@ For contributing to this repository:
 2. Install the Git hooks to automatically prevent committing files with credentials
 3. Use environment variables for storing sensitive data
 
+## 🐳 Example QGIS Server image
+`Dockerfile.example` shows how these project files can be served with QGIS Server
+(`ghcr.io/camptocamp/qgis-server`). It is a reference only: it is not built, published or
+security-scanned by this repository, so its base image is not kept up to date. Build it locally
+when you need it:
+
+```bash
+docker build -f Dockerfile.example -t tnt-topo-example .
+docker run --rm -p 8080:8080 tnt-topo-example
+```
+
 ## Repository Structure
 - **data/** - QGIS project files and layer definitions (QLR files)
 - **docs/** - Documentation and guides
-- **fonts/** - Custom fonts for map rendering
-- **proj/** - Projection definitions
-- **runtime/** - Server initialization scripts
+- **fonts/** - Custom fonts for map rendering (used by `Dockerfile.example`)
+- **proj/** - Projection definitions (used by `Dockerfile.example`)
+- **runtime/** - Server initialization scripts (used by `Dockerfile.example`)
 - **scripts/** - Automation and utility scripts
 - **styles/** - QML and SLD style files for map layers
+- **Dockerfile.example** - Example QGIS Server image, see above
